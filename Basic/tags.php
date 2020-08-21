@@ -1,0 +1,8 @@
+<?php
+// comments
+?>
+
+<?
+// comments
+?>
+
