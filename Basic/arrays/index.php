@@ -49,8 +49,14 @@ $peoples = [
 
 $len = count($peoples);
 
-for ($i = 0; $i < $len; $i++) {
-    if ($peoples[$i]["firstname"])
-        echo "<p>Имя №" . ($i + 1) . ": " . $peoples[$i]["firstname"] . "</p>";
+//for ($i = 0; $i < $len; $i++) {
+//    if ($peoples[$i]["firstname"])
+//        echo "<p>Имя №" . ($i + 1) . ": " . $peoples[$i]["firstname"] . "</p>";
+//}
+
+$i = 1;
+foreach ($peoples as $key => $value) {
+    echo "<p>Имя №" . $i . ": " . $value["firstname"] . "</p>";
+    $i++;
 }
 
