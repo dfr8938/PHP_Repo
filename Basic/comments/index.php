@@ -15,7 +15,7 @@
 
             # create list
             $fruits = ["apple", "orange", "cherry", "lime", "strawberry"];
-            
+
             # output elements list
             for ($i = 0; $i < count($fruits); $i++) {
                 echo "<li>" . $fruits[$i] . "</li>";
