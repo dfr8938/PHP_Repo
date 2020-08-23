@@ -1,24 +1,28 @@
 <?php
 
-    $serverName = "localhost";
-    $user = "root";
-    $password = "";
-    $dbName = "newssite";
+    define('SERVER', "localhost");
+    define('USER', "root");
+    define('PASS', "");
+    define('DB', "newssite");
 
-    $conn = mysqli_connect($serverName, $user, $password, $dbName);
-    mysqli_set_charset($conn, "utf8");
+    function f_con($server, $user, $password, $dbName) {
+       return mysqli_connect($server, $user, $password, $dbName);
+    }
 
-    if (!$conn) {
-        echo "<p>No connection</p>" . mysqli_connect_error();
-    } //echo "<p>Connection</p>";
+    $connect = f_con(SERVER, USER, PASS, DB);
+    mysqli_set_charset($connect, "utf8");
+
+    if (!$connect) {
+        echo 'No connection' . mysqli_connect_error();
+    }
 
     // Добавить
 
     //$query = "INSERT INTO news_category VALUES (NULL, 'category3', 'description3', '1', '1')";
-    //$into = mysqli_query($conn, $query);
+    //$into = mysqli_query($connect, $query);
 
-    function del_el($id, $table, $conn) {
-        mysqli_query($conn, "DELETE FROM $table" . " WHERE id=" . "$id");
+    function f_delete($id, $table, $connect) {
+        mysqli_query($connect, "DELETE FROM $table" . " WHERE id=" . "$id");
     }
 
-    //del_el(3, "news_category", $conn);
+    f_delete(3, "news_category", $connect);
