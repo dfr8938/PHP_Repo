@@ -56,8 +56,11 @@ echo $car1->tripTime(120) . '<br>';
 echo '<pre>';
 print_r($car2);
 echo '</pre>';
+
+echo $car2->tripTime(120) . '<br>';
+
 echo '<pre>';
 print_r($car3);
 echo '</pre>';
 
-
+echo $car3->tripTime(120) . '<br>';
