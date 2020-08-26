@@ -9,7 +9,7 @@ class Car {
     public $brand;
 
     /**
-     * Car constructor.
+     * car constructor.
      * @param $color
      * @param $speed
      * @param $fuel
@@ -48,13 +48,13 @@ class Car {
     }
 }
 
-$car1 = new Car("white", 300, 100, "supra");
+$car1 = new car("white", 300, 100, "supra");
 echo "wheels car1: " . $car1->getWheels() . '<br>';
 
-$car2 = new Car("black", 120, 60, "reno");
+$car2 = new car("black", 120, 60, "reno");
 echo "wheels car2: " . $car2->getWheels() . '<br>';
 
-$car3 = new Car("blue", 400, 150, "ferrari");
+$car3 = new car("blue", 400, 150, "ferrari");
 echo "wheels car3: " . $car3->getWheels() . '<br>';
 
 echo '<pre>';
