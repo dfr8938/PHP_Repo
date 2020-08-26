@@ -15,6 +15,10 @@ class Vehicle {
         $this->fuel = $fuel;
     }
 
+    public function tripTime($distance) {
+        return $distance / $this->speed;
+    }
+
     public function getWheels() {
         return self::WHEELS;
     }
