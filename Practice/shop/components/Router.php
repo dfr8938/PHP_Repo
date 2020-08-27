@@ -40,13 +40,13 @@ class Router
 
                 // Нахождение имени controller
                 $nameController = ucfirst(array_shift($segments) . 'Controller');
-                echo $nameController;
+                echo 'Класс: ' . $nameController;
 
                 echo '<br>';
 
                 // Нахождение имени action
                 $nameAction = 'action' . ucfirst(array_shift($segments));
-                echo $nameAction;
+                echo 'Метод: ' . $nameAction;
             }
 
         }
