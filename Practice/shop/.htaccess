@@ -1,0 +1,5 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+RewriteBase /php/PHP_Repo/Practice/shop/
+RewriteRule ^(.*)$ index.php
