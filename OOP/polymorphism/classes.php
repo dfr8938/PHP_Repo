@@ -1,6 +1,6 @@
 <?php
 
-class Publicahion {
+abstract class Publicahion {
 
     public $id;
     public $title;
@@ -21,6 +21,8 @@ class Publicahion {
         $this->author_name = $row['author_name'];
         $this->type = $row['type'];
     }
+
+    abstract function printItem();
 }
 
 class NewsPublication extends Publicahion {
