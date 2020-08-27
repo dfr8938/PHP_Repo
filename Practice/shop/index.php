@@ -1,6 +1,6 @@
 <?php
 
-echo "<h1>Index page</h1>";
+echo "<h1>Index page</h1><hr>";
 
 /*
  * FRONT CONTROLLER
@@ -35,4 +35,4 @@ require_once (ROOT.'/components/Router.php');
  * 4. Вызов Router
  */
 $router = new Router();
-echo 'uri: ' . $router->run();
+echo $router->run();
