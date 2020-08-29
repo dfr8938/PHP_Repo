@@ -39,14 +39,31 @@ class Router
                 //echo '<br>';
 
                 // Нахождение имени controller
-                $nameController = ucfirst(array_shift($segments) . 'Controller');
-                echo 'Класс: ' . $nameController;
+                $controllerName = ucfirst(array_shift($segments) . 'Controller');
+                echo 'Класс: ' . $controllerName;
 
                 echo '<br>';
 
                 // Нахождение имени action
-                $nameAction = 'action' . ucfirst(array_shift($segments));
-                echo 'Метод: ' . $nameAction;
+                $actionName = 'action' . ucfirst(array_shift($segments));
+                echo 'Метод: ' . $actionName;
+
+                echo '<br>';
+                
+                // Подключить файл класса-контроллера
+                $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
+                // если $controllerFile существует, то подключаем
+                if (file_exists($controllerFile)) {
+                    include_once ($controllerFile);
+                }
+                else echo 'No!';
+
+                // Создание объекта класса $nameController
+                $controllerObject = new $controllerName();
+                $result = $controllerObject->$actionName();
+                if ($result != null) {
+                    break;
+                }
             }
 
         }
