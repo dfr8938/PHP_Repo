@@ -49,7 +49,7 @@ class Router
                 echo 'Метод: ' . $actionName;
 
                 echo '<br>';
-                
+
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
                 // если $controllerFile существует, то подключаем
