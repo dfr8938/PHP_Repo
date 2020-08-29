@@ -38,17 +38,20 @@ class Router
                 //print_r($segments);
                 //echo '<br>';
 
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+                echo $internalRoute . '<br>';
+
                 // Нахождение имени controller
                 $controllerName = ucfirst(array_shift($segments) . 'Controller');
-                echo 'Класс: ' . $controllerName;
-
-                echo '<br>';
+//                echo 'Класс: ' . $controllerName;
+//
+//                echo '<br>';
 
                 // Нахождение имени action
                 $actionName = 'action' . ucfirst(array_shift($segments));
-                echo 'Метод: ' . $actionName;
-
-                echo '<br>';
+//                echo 'Метод: ' . $actionName;
+//
+//                echo '<br>';
 
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';

@@ -2,9 +2,15 @@
 
 class ProductController
 {
-    public function actionList()
+    public function actionIndex()
     {
-        echo 'ProductController actionList';
+        echo 'Список новостей';
+        return true;
+    }
+
+    public function actionView()
+    {
+        echo 'Просмотр одной новости';
         return true;
     }
 }
