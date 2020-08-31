@@ -112,7 +112,7 @@ require_once "config/function.php";
                                         echo 0;
                                     }
                                     else {
-                                        roman_date($_GET['date']);
+                                        echo roman_date($_GET['date']);
                                     }
                                     ?>
                                 </p>

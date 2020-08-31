@@ -39,9 +39,26 @@ function output_number($start, $end, $redness)
     }
 }
 
+function one_to_three($a, $b) {
+    $c = '';
+    for ($n = 0; $n < $b; $n++) {
+        $c .= $a;
+    }
+    return $c;
+}
+
+function six_to_eight($a, $b, $d) {
+    $c = $d;
+    for ($n = 1; $n < $b - 4; $n++) {
+        $c .= $a;
+    }
+    return $c;
+}
+
 function roman_date($num) {
     $arr = str_split($num);
     $len = count($arr);
+    $result = '';
 
     $unit = array(
         ['I', 'V', 'X'],
@@ -52,23 +69,22 @@ function roman_date($num) {
 
     if ($len >= 1) {
 
+        $out = '';
         for ($i = 0, $j = $len - 1; $i < count($arr), $j >= 0; $i++, $j--) {
             if ($arr[$i] <= 3) {
-                for ($n = 0; $n < $arr[$i]; $n++) {
-                    echo $unit[$j][0];
-                }
+                $out .= one_to_three($unit[$j][0], $arr[$i]);
             } elseif ($arr[$i] > 3 && $arr[$i] < 5) {
-                echo $unit[$j][0] . $unit[$j][1];
+                $out .= ($unit[$j][0] . $unit[$j][1]);
             } elseif ($arr[$i] <= 5) {
-                echo $unit[$j][1];
+                $out .= $unit[$j][1];
             } elseif ($arr[$i] > 5 && $arr[$i] < 9) {
-                echo $unit[$j][1];
-                for ($n = 1; $n < $arr[$i] - 4; $n++) {
-                    echo $unit[$j][0];
-                }
+                $out .= six_to_eight($unit[$j][0], $arr[$i], $unit[$j][1]);
             } else {
-                echo $unit[$j][0] . $unit[$j][2];
+                $out .= ($unit[$j][0] . $unit[$j][2]);
             }
         }
+
+        $result .= $out;
     }
+    return $result;
 }
