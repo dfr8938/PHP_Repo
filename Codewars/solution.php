@@ -1,6 +1,6 @@
 <?php
 
-require_once "config/function.php";
+require_once "config/func_solution.php";
 
 ?>
 
