@@ -4,12 +4,12 @@ function create_array(int $n) {
     return str_split((string) $n);
 }
 
-function expanded_form(int $n): string {
+function expanded_form(int $n): string
+{
     // Your code here
 
     $arr = create_array($n);
     $len = count($arr);
-    $zero = array();
     $j = '';
     for ($n = 0; $n < $len; $n++) {
         $j .= $arr[$n];
@@ -22,33 +22,34 @@ function expanded_form(int $n): string {
     }
 
     $sp = array_unique(explode('+', $j));
-//    print_r($sp);
-
-
 
     $str = array();
     $i = 0;
     foreach ($sp as $item) {
-        if ((int) $item != 0) {
-            $str[$i] = (int)$item;
+        $str[$i] = (int)$item;
+        $i++;
+    }
+
+    $i = 0;
+    $arr = array();
+    $str = array_unique($str);
+    foreach ($str as $item) {
+        if ($item != 0) {
+            $arr[$i] = $item;
+            $i++;
+        }
+    }
+
+    $str = '';
+    $i = 0;
+    foreach ($arr as $item) {
+        if ($i != count($arr) - 1) {
+            $str .= $item . ' + ';
+        } else {
+            $str .= $item;
         }
         $i++;
     }
 
-    $str = array_unique($str);
-
-    $i = '';
-    for ($n = 0; $n < count($str); $n++) {
-        if ($n < count($str) - 1) {
-            $i .= $str[$n] . ' + ';
-        } else {
-            $i .= $str[$n];
-        }
-    }
-
-//    echo '<hr>';
-//    print_r($str);
-    return $i;
+    return $str;
 }
-
-//expanded_form(70304);

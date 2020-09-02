@@ -1,8 +1,10 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 require_once "../../expanded_form.php";
 
-class ExpandedFormTest extends \PHPUnit\Framework\TestCase
+class ExpandedFormTest extends TestCase
 {
     public function testDescriptionExamples() {
         $this->assertEquals("10 + 2", expanded_form(12));
