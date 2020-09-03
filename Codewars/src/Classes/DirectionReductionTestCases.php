@@ -1,8 +1,10 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 require_once "../../dirReduc.php";
 
-class DirectionReductionTestCases extends \PHPUnit\Framework\TestCase
+class DirectionReductionTestCases extends TestCase
 {
     private function revTest($actual, $expected) {
         $this->assertEquals($expected, $actual);
