@@ -1,110 +1,68 @@
 <?php
 
-$d = ['EAST', 'EAST', 'EAST', 'EAST', 'SOUTH', 'SOUTH', 'WEST', 'WEST', 'NORTH'];
+//require_once "config/help_func.php";
+//
+//$a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"];
+//$b=["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"];
+//$c = ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH","NORTH"];
+//$d = ['EAST', 'EAST', 'EAST', 'EAST', 'SOUTH', 'SOUTH', 'WEST', 'WEST', 'NORTH'];
+//
+
+$e = ['WEST', 'NORTH', 'WEST'];
 
 function dirReduc($arr) {
 
     $hash = array_count_values($arr);
-//    print_r($hash);
 
-    $str = array();
-    if (count($arr) == 0) {
-        return $str = $hash;
-    }
-    if ($hash['NORTH'] == $hash['SOUTH'] && $hash['EAST'] > $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'NORTH' && $key != 'SOUTH' && $key != 'WEST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] == $hash['SOUTH'] && $hash['EAST'] < $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'NORTH' && $key != 'SOUTH' && $key != 'EAST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] < $hash['SOUTH'] && $hash['EAST'] == $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'NORTH' && $key != 'WEST' && $key != 'EAST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] > $hash['SOUTH'] && $hash['EAST'] == $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'SOUTH' && $key != 'WEST' && $key != 'EAST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] < $hash['SOUTH'] && $hash['EAST'] > $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'NORTH' && $key != 'WEST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] < $hash['SOUTH'] && $hash['EAST'] < $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'NORTH' && $key != 'EAST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] > $hash['SOUTH'] && $hash['EAST'] > $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'SOUTH' && $key != 'WEST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] > $hash['SOUTH'] && $hash['EAST'] < $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            if ($key != 'SOUTH' && $key != 'EAST') {
-                $str[] = $key;
-            }
-        }
-    }
-    elseif ($hash['NORTH'] == $hash['SOUTH']) {
-        foreach ($hash as $key => $value) {
-            $str[] = $key;
-        }
-    }
-    elseif ($hash['EAST'] == $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            $str[] = $key;
-        }
-    }
-    elseif ($hash['EAST'] == $hash['SOUTH']) {
-        foreach ($hash as $key => $value) {
-            $str[] = $key;
-        }
-    }
-    elseif ($hash['EAST'] == $hash['NORTH']) {
-        foreach ($hash as $key => $value) {
-            $str[] = $key;
-        }
-    }
-    elseif ($hash['NORTH'] == $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            $str[] = $key;
-        }
-    }
-    elseif ($hash['SOUTH'] == $hash['WEST']) {
-        foreach ($hash as $key => $value) {
-            $str[] = $key;
-        }
-    }
-    elseif ($hash['EAST'] == $hash['WEST'] && $hash['NORTH'] == $hash['SOUTH'] && $hash['NORTH'] == $hash ['WEST']) {
-        foreach ($hash as $key => $value) {
-            return [];
-        }
-    }
+//    show_arr($hash);
 
+        $x = $hash['WEST'] - $hash['EAST'];
+        $y = $hash['NORTH'] - $hash['SOUTH'];
 
-    return $str;
+//    echo $x . ' ' . $y;
+
+        $output = array();
+        if (count($hash) > 2) {
+            return $arr;
+        }
+        if ($x < 0 && $y < 0) {
+            foreach ($hash as $key => $value) {
+                if ($key != 'WEST' && $key != 'NORTH') {
+                    $output[] = $key;
+                }
+            }
+        } elseif ($x > 0 && $y > 0) {
+            foreach ($hash as $key => $value) {
+                if ($key != 'EAST' && $key != 'SOUTH') {
+                    $output[] = $key;
+                }
+            }
+        } elseif ($x == 0 && $y > 0) {
+            foreach ($hash as $key => $value) {
+                if ($key != 'WEST' && $key != 'EAST' && $key != 'SOUTH') {
+                    $output[] = $key;
+                }
+            }
+        } elseif ($x == 0 && $y < 0) {
+            foreach ($hash as $key => $value) {
+                if ($key != 'WEST' && $key != 'EAST' && $key != 'NORTH') {
+                    $output[] = $key;
+                }
+            }
+        } elseif ($x > 0 && $y == 0) {
+            foreach ($hash as $key => $value) {
+                if ($key != 'EAST' && $key != 'NORTH' && $key != 'SOUTH') {
+                    $output[] = $key;
+                }
+            }
+        } elseif ($x < 0 && $y == 0) {
+            foreach ($hash as $key => $value) {
+                if ($key != 'WEST' && $key != 'NORTH' && $key != 'SOUTH') {
+                    $output[] = $key;
+                }
+            }
+        }
+//    show_arr($output);
+    return $output;
 }
-
-dirReduc($d);
+ print_r(dirReduc($e));

@@ -8,3 +8,10 @@ function show_arr($arr) {
 
     echo '<hr>';
 }
+
+function show_arr_len($arr) {
+
+    echo 'length: ' . count($arr);
+
+    echo '<hr>';
+}
