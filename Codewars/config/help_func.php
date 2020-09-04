@@ -15,3 +15,7 @@ function show_arr_len($arr) {
 
     echo '<hr>';
 }
+
+function hash_str($str) {
+    return array_count_values(str_split($str));
+}
