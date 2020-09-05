@@ -3,4 +3,4 @@
     define('SERVER', "localhost");
     define('USER', "root");
     define('PASSWORD', "");
-    define('DB', "test");
+    define('DB', "test.html");

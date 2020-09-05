@@ -24,7 +24,7 @@ require_once "../../config/functions/help_func.php";
 
     $weather = rar($data, 'weather');
     $icon = $weather[0]['icon'];
-    if ($icon == '10d') {
+    if ($icon == '10d' || $icon == '10n') {
         echo '<div class="block_weather" style="background-image: url(../images/rain.jpg);">';
     } elseif ($icon == '11d') {
         echo '<div class="block_weather" style="background-image: url(../images/storm.jpeg);">';

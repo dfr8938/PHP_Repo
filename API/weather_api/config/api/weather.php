@@ -39,10 +39,10 @@ $options = [
     "lang" => "en",
 ];
 
-$cu = curl_init();
-curl_setopt($cu, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($cu, CURLOPT_URL, URL . '?' . http_build_query($options));
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_URL, URL . '?' . http_build_query($options));
 
-$res = curl_exec($cu);
+$res = curl_exec($ch);
 $data = json_decode($res, true);
-curl_close($cu);
+curl_close($ch);
