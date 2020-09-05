@@ -1,0 +1,5 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+RewriteBase /php_repo/Parsing/assets/views
+RewriteRule ^(.*)$ index.php
