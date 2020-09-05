@@ -12,11 +12,22 @@ function arr_key($arr) {
 }
 
 // значения для хеша
-function arr_val($arr, $i = 1) {
+function arr_val($arr) {
     $s = array();
     foreach ($arr as $key => $value) {
         if ($key != ' ' && $key != ucfirst($key) && $key != ',') {
-            $s[] = $i . ':' . str_repeat($key, (int) $value) . '/';
+            $s[] = str_repeat($key, (int) $value) . '/';
+        }
+    }
+    return $s;
+}
+
+// значения для хеша(без повторений)
+function arr_val_unit($arr) {
+    $s = array();
+    foreach ($arr as $key => $value) {
+        if ($key != ' ' && $key != ucfirst($key) && $key != ',') {
+            $s[] = $key . '/';
         }
     }
     return $s;
@@ -26,29 +37,34 @@ function arr_val($arr, $i = 1) {
 function hash_key_val($arr1, $arr2) {
     $s = array();
     for ($i = 0; $i < count($arr1); $i++) {
-        $s[($arr2[$i] - 2) . ' ' . $arr1[$i]] = $arr2[$i] - 2;
+        $s[($arr2[$i] - 1) . ' ' . $arr1[$i]] = $arr2[$i] - 1;
     }
     return $s;
 }
 
 // сортировка массива(хеша)
-function hash_output($s1, $i = 1) {
+function hash_output($s1) {
     $str = hash_str($s1);
-    $s1 = arr_val($str, $i);
+    $s1 = arr_val($str);
     $s2 = arr_key($s1);
     $str = hash_key_val($s1, $s2);
     ksort($str);
     return $str;
 }
 
-function mix($s1, $s2) {
+// сортировка массива(хеша)
+function hash_output_unit($s1) {
+    $str = hash_str($s1);
+    $s1 = arr_val_unit($str);
+    $s2 = arr_key($s1);
+    $str = hash_key_val($s1, $s2);
+    ksort($str);
+    return $str;
+}
 
-    $str = '';
-
-    $arr1 = hash_output($s1);
-
+function hash_output_sort($hash) {
     $s1 = array();
-    foreach ($arr1 as $key => $value) {
+    foreach ($hash as $key => $value) {
         $s1[] = $key;
     }
 
@@ -70,7 +86,6 @@ function mix($s1, $s2) {
         $s1 .= $item;
     }
 
-    $s = array();
     $s = explode('/', $s1);
 
     // key
@@ -83,26 +98,47 @@ function mix($s1, $s2) {
 
     // value
     $s = array();
-    foreach ($arr1 as $key => $value) {
+    foreach ($hash as $key => $value) {
         $s[] = $value;
     }
 
-    $arr1 = array();
+    $hash = array();
     for ($i = 0; $i < count($s); $i++) {
-        $arr1[$s1[$i]] = $s[$i];
+        $hash[$s1[$i]] = $s[$i];
     }
 
-    show_arr($arr1);
-    show_arr($s);
-    show_arr($s1);
+    return $hash;
+}
 
-//    $arr2 = hash_output($s2, $i = 2);
-//
-//    $s2 = array();
-//    foreach ($arr2 as $key => $value) {
-//        $s2[] = $key;
-//    }
-//    show_arr($s2);
+function mix($s1, $s2) {
+
+    $str = '';
+
+//    show_arr(hash_output($s1));
+//    show_arr(hash_output($s2));
+
+    $hash1 = hash_output_sort(hash_output($s1));
+    show_arr($hash1);
+    $hash2 = hash_output_sort(hash_output($s2));
+    show_arr($hash2);
+
+    $h_u1 = hash_output_sort(hash_output_unit($s1));
+    show_arr($h_u1);
+    $h_u2 = hash_output_sort(hash_output_unit($s2));
+    show_arr($h_u2);
+
+
+    $a = array();
+    $b = array();
+    foreach ($h_u1 as $key => $value) {
+        $a[] = $key;
+    }
+    foreach ($h_u2 as $key => $value) {
+        $b[] = $key;
+    }
+
+    show_arr($a);
+    show_arr($b);
 
     return $str;
 }
