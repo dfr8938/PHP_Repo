@@ -46,7 +46,3 @@ curl_setopt($cu, CURLOPT_URL, URL . '?' . http_build_query($options));
 $res = curl_exec($cu);
 $data = json_decode($res, true);
 curl_close($cu);
-
-echo '<pre>';
-print_r($data);
-echo '</pre>';

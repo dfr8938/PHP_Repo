@@ -1,5 +1,5 @@
 AddDefaultCharset UTF-8
 
 RewriteEngine on
-RewriteBase /php_repo/Practice/MVC/
+RewriteBase /php_repo/API/weather_api/assets/views/
 RewriteRule ^(.*)$ index.php

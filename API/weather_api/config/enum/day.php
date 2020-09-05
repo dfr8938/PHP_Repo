@@ -1,6 +1,6 @@
 <?php
 
-return [
+$day = [
     'Sunday' => 'Воскресенье',
     'Monday' => 'Понедельник',
     'Tuesday' => 'Вторник',
