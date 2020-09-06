@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once "../../dirReduc.php";
+require_once "../files/dirReduc.php";
 
 class DirectionReductionTestCases extends TestCase
 {

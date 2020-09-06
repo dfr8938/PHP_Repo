@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../part _word.php";
+require_once "../files/part _word.php";
 
 use PHPUnit\Framework\TestCase;
 

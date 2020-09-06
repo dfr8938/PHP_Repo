@@ -1,6 +1,6 @@
 <?php
 
-//require_once "config/help_func.php";
+//require_once "config/get_curl.php";
 //
 //$arr = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5];
 

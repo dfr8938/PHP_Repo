@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../permutations.php";
+require_once "../files/permutations.php";
 
 use PHPUnit\Framework\TestCase;
 

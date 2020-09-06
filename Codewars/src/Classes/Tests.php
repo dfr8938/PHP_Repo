@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../find.php";
+require_once "../files/find.php";
 
 class Tests extends \PHPUnit\Framework\TestCase
 {

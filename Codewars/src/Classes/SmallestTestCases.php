@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../smallest.php";
+require_once "../files/smallest.php";
 
 use PHPUnit\Framework\TestCase;
 

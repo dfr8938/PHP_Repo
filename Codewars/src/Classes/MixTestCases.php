@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../mix.php";
+require_once "../files/mix.php";
 
 use PHPUnit\Framework\TestCase;
 

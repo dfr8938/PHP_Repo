@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../generateHashtag.php";
+require_once "../files/generateHashtag.php";
 
 class MyTestCases extends \PHPUnit\Framework\TestCase
 {

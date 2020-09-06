@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once "../../persistence.php";
+require_once "../files/persistence.php";
 
 class PersistenceTest extends TestCase
 {

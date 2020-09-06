@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once "../../same_structure_as.php";
+require_once "../files/same_structure_as.php";
 
 class SameStructureAsTest extends TestCase
 {

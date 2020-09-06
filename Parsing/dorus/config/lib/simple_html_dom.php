@@ -5,7 +5,7 @@
  * Acknowledge: Jose Solorzano (https://sourceforge.net/projects/php-html/)
  *
  * Licensed under The MIT License
- * See the LICENSE file in the project root for more information.
+ * See the LICENSE file.html in the project root for more information.
  *
  * Authors:
  *   S.C. Chen
@@ -1166,7 +1166,7 @@ class simple_html_dom_node
 		// for it to apply to the image.
 
 		// ridiculously far future development
-		// If the class or id is specified in a SEPARATE css file thats not on
+		// If the class or id is specified in a SEPARATE css file.html thats not on
 		// the page, go get it and do what we were just doing for the ones on
 		// the page.
 

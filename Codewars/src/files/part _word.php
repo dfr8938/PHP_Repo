@@ -1,6 +1,6 @@
 <?php
 
-//require_once "config/help_func.php";
+//require_once "config/get_curl.php";
 
 function part_word($str, $ending) {
 

@@ -1,0 +1,5 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+RewriteBase /php_repo/Parsing/school21/assets/views
+RewriteRule ^(.*)$ index.php

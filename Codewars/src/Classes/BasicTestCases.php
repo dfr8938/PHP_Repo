@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../findIt.php";
+require_once "../files/findIt.php";
 
 use PHPUnit\Framework\TestCase;
 

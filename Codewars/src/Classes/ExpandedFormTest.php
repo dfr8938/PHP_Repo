@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once "../../expanded_form.php";
+require_once "../files/expanded_form.php";
 
 class ExpandedFormTest extends TestCase
 {

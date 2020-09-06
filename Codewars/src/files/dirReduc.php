@@ -1,6 +1,6 @@
 <?php
 
-//require_once "config/help_func.php";
+//require_once "config/get_curl.php";
 //
 //$a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"];
 //$b=["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"];

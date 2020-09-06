@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../rgb.php";
+require_once "../files/rgb.php";
 
 use PHPUnit\Framework\TestCase;
 

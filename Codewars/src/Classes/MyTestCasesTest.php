@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../arrayDiff.php";
+require_once "../files/arrayDiff.php";
 
 use PHPUnit\Framework\TestCase;
 
