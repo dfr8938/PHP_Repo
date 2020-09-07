@@ -10,7 +10,8 @@ $ref = "https://www.google.ru/";
 $html = get_curl($url, $user_agent, $ref);
 $file = "../../file.html";
 file_put_contents($file, $html);
-acc_arr($html);
+
+$a = acc_arr($html);
 
 ?>
 
