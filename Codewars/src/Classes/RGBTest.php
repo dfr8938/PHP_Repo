@@ -4,7 +4,7 @@ require_once "../files/rgb.php";
 
 use PHPUnit\Framework\TestCase;
 
-class MyTestCasesRGB extends TestCase
+class RGBTest extends TestCase
 {
     public function testBaseTests() {
         // assertEquals(mixed $expected, mixed $actual[, string $message = ''])

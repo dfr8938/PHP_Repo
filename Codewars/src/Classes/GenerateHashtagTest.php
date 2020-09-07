@@ -1,8 +1,10 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 require_once "../files/generateHashtag.php";
 
-class MyTestCases extends \PHPUnit\Framework\TestCase
+class GenerateHashtagTest extends TestCase
 {
     public function testThatSomethingShouldHappen() {
         $this->assertEquals(false, generateHashtag(''), 'Expected an empty string to return false');

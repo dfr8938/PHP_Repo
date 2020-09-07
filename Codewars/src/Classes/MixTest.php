@@ -4,7 +4,7 @@ require_once "../files/mix.php";
 
 use PHPUnit\Framework\TestCase;
 
-class MixTestCases extends TestCase
+class MixTest extends TestCase
 {
     private function revTest($actual, $expected) {
         $this->assertEquals($expected, $actual);

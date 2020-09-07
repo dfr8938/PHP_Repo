@@ -2,7 +2,7 @@
 
 require_once "../files/find.php";
 
-class Tests extends \PHPUnit\Framework\TestCase
+class FindTest extends \PHPUnit\Framework\TestCase
 {
     public function testBasic() {
         $this->assertEquals(101, find([100, 101, 102]));

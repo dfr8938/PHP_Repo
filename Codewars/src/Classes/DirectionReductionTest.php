@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 
 require_once "../files/dirReduc.php";
 
-class DirectionReductionTestCases extends TestCase
+class DirectionReductionTest extends TestCase
 {
     private function revTest($actual, $expected) {
         $this->assertEquals($expected, $actual);

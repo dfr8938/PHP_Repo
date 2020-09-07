@@ -4,7 +4,7 @@ require_once "../files/smallest.php";
 
 use PHPUnit\Framework\TestCase;
 
-class SmallestTestCases extends TestCase
+class SmallestTest extends TestCase
 {
     private function revTest($actual, $expected) {
         $this->assertEquals($expected, $actual);

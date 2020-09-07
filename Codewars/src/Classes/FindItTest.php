@@ -4,7 +4,7 @@ require_once "../files/findIt.php";
 
 use PHPUnit\Framework\TestCase;
 
-class BasicTestCases extends TestCase
+class FindItTest extends TestCase
 {
     public function testFindItReturnsValueAppearingOddNumberOfTimes()
     {
